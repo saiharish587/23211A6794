@@ -58,6 +58,9 @@ function App() {
 
         const response = await fetch(notificationApiUrl, {
           signal: controller.signal,
+          headers: {
+            'Authorization': import.meta.env.VITE_API_TOKEN || ''
+          }
         })
 
         if (!response.ok) {
